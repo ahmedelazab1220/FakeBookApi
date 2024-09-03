@@ -257,3 +257,21 @@ public class BookController {
   - **`DELETE /api/v1/books/{id}`** : Deletes a book by its ID.
 
 ## Running the Application
+
+- Clone the Repository
+
+  - git clone https://github.com/ahmedelazab1220/FakeBookApi.git
+  - cd FakeBookApi
+
+- Build the Project
+
+  - mvn clean install
+  - mvn spring-boot:run
+
+The application will start and listen on port `8080` by default.
+
+Development and Contribution
+Fork the Repository and create a feature branch.
+Commit Your Changes with descriptive messages.
+Push to Your Fork and create a pull request.
+For any issues or feature requests, please use the <a href="https://github.com/features/issues"> GitHub Issues </a> page.
