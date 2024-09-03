@@ -8,11 +8,11 @@ import reactor.core.publisher.Mono;
 public interface IBookService {
 
 	Flux<Book> getAllBooks();
-	
+
 	Mono<Book> getBookById(Integer bookId);
-	
+
 	Mono<String> deleteBookById(Integer bookId);
-	
+
 	Mono<Book> saveBook(Book book);
-	
+
 }

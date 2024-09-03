@@ -25,35 +25,31 @@ import reactor.core.publisher.Mono;
 public class BookController {
 
 	private final IBookService bookService;
-	
+
 	// Endpoint to get all books
-    @GetMapping(value="",produces = "text/event-stream")
-    public Flux<Book> getAllBooks() {
-        return bookService.getAllBooks().delayElements(Duration.ofSeconds(1));
-    }
+	@GetMapping(value = "", produces = "text/event-stream")
+	public Flux<Book> getAllBooks() {
+		return bookService.getAllBooks().delayElements(Duration.ofSeconds(1));
+	}
 
-    // Endpoint to get a book by ID
-    @GetMapping(value="/{id}",produces = "text/event-stream")
-    public Mono<ResponseEntity<Book>> getBookById(@PathVariable Integer id) {
-        return bookService.getBookById(id)
-            .map(book -> ResponseEntity.ok(book))
-            .onErrorResume(e -> Mono.just(ResponseEntity.status(HttpStatus.NOT_FOUND).build()));
-    }
+	// Endpoint to get a book by ID
+	@GetMapping(value = "/{id}", produces = "text/event-stream")
+	public Mono<ResponseEntity<Book>> getBookById(@PathVariable Integer id) {
+		return bookService.getBookById(id).map(book -> ResponseEntity.ok(book))
+				.onErrorResume(e -> Mono.just(ResponseEntity.status(HttpStatus.NOT_FOUND).build()));
+	}
 
-    // Endpoint to save a new book
-    @PostMapping(value="",produces = "text/event-stream")
-    public Mono<ResponseEntity<Book>> saveBook(@RequestBody Book book) {
-        return bookService.saveBook(book)
-            .map(savedBook -> ResponseEntity.status(HttpStatus.CREATED).body(savedBook));
-    }
+	// Endpoint to save a new book
+	@PostMapping(value = "", produces = "text/event-stream")
+	public Mono<ResponseEntity<Book>> saveBook(@RequestBody Book book) {
+		return bookService.saveBook(book).map(savedBook -> ResponseEntity.status(HttpStatus.CREATED).body(savedBook));
+	}
 
-    // Endpoint to delete a book by ID
-    @DeleteMapping(value="/{id}",produces = "text/event-stream")
-    public Mono<ResponseEntity<String>> deleteBookById(@PathVariable Integer id) {
-        return bookService.deleteBookById(id)
-            .map(message -> ResponseEntity.ok(message))
-            .onErrorResume(e -> Mono.just(ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage())));
-    }
-	
-	
+	// Endpoint to delete a book by ID
+	@DeleteMapping(value = "/{id}", produces = "text/event-stream")
+	public Mono<ResponseEntity<String>> deleteBookById(@PathVariable Integer id) {
+		return bookService.deleteBookById(id).map(message -> ResponseEntity.ok(message))
+				.onErrorResume(e -> Mono.just(ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage())));
+	}
+
 }

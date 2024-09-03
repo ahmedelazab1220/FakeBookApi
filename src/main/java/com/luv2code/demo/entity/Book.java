@@ -18,20 +18,20 @@ public class Book {
 
 	@Id
 	private Integer id;
-	
-	@Column(value="author")
+
+	@Column(value = "author")
 	private String author;
-	
-	@Column(value="description")
+
+	@Column(value = "description")
 	private String description;
-	
-	@Column(value="cover_image")
+
+	@Column(value = "cover_image")
 	private String coverImage;
-	
-	@Column(value="title")
+
+	@Column(value = "title")
 	private String title;
-	
-	@Column(value="publication_year")
+
+	@Column(value = "publication_year")
 	private Integer publicationYear;
-	
+
 }
