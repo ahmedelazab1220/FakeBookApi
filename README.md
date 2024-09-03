@@ -2,7 +2,7 @@
 
 ## Overview
 
-The Book Management API is a reactive RESTful service designed to manage book records. It is built using Spring Boot and incorporates Project Reactor for reactive programming. The API supports CRUD operations and real-time streaming updates with Server-Sent Events (SSE).
+The Book Management API is a reactive RESTful service designed to manage book records. It is built using Spring Boot and incorporates Project Reactor for reactive programming.
 
 ## Features
 
@@ -270,8 +270,17 @@ public class BookController {
 
 The application will start and listen on port `8080` by default.
 
-Development and Contribution
-Fork the Repository and create a feature branch.
-Commit Your Changes with descriptive messages.
-Push to Your Fork and create a pull request.
-For any issues or feature requests, please use the <a href="https://github.com/features/issues"> GitHub Issues </a> page.
+## Development and Contribution
+
+- Fork the Repository and create a feature branch.
+- Commit Your Changes with descriptive messages.
+- Push to Your Fork and create a pull request.
+- For any issues or feature requests, please use the <a href="https://github.com/features/issues"> GitHub Issues </a> page.
+
+## License
+
+This project is licensed under the Apache License 2.0 - see the <a href="https://github.com/ahmedelazab1220/FakeBookApi/blob/main/LICENSE"> LICENSE </a> file for details.
+
+## Conclusion
+
+The Book Management API efficiently handles book records using a reactive, non-blocking approach with Spring Boot and Project Reactor. supports full CRUD operations, ensuring scalable and responsive interactions.
