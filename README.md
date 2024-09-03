@@ -65,6 +65,30 @@ public class Book {
 
 - Purpose: Represents the book entity mapped to the books table in the database.
 - Annotations:
+
   - _@Table_ : Specifies the table name.
   - _@Id_ : Indicates the primary key field.
   - _@Column_ : Maps fields to columns in the table.
+
+- Book Repository
+
+```java
+
+package com.luv2code.demo.repository;
+
+import org.springframework.data.repository.reactive.ReactiveCrudRepository;
+import org.springframework.stereotype.Repository;
+
+import com.luv2code.demo.entity.Book;
+
+@Repository
+public interface BookRepository extends ReactiveCrudRepository<Book, Integer> {
+
+}
+
+```
+
+- Purpose: Provides reactive data access methods for Book entities.
+- Annotations:
+  - _@Repository_: Indicates that this is a repository component.
+  - Extends ReactiveCrudRepository for CRUD operations.
