@@ -22,7 +22,7 @@ The Book Management API is a reactive RESTful service designed to manage book re
 
 - Book Entity
 
-```
+```java
 
 package com.luv2code.demo.entity;
 
@@ -62,3 +62,9 @@ public class Book {
 }
 
 ```
+
+- Purpose: Represents the book entity mapped to the books table in the database.
+- Annotations:
+  - _@Table_ : Specifies the table name.
+  - _@Id_ : Indicates the primary key field.
+  - _@Column_ : Maps fields to columns in the table.
